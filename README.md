@@ -6,45 +6,56 @@ Employees manager is an api to manage employees data.
 
 Dependencies used on development:
 
-- Node v10.16.0
-- Yarn v1.17.3
+- Python v3.7.4
 - Docker v18.09.2
-- MongoDB v4.0
+- MySQL v5.7
 
-The application is written in node with express framework and mongo db as database.
-
-Yarn is used to manage dependencies and tasks.
+The application is written in python3 with flask micro framework and mysql as database.
 
 Docker is used to run the application in "production mode" and guarantee their functionality in different environments.
 
 # How to use
 
+## Prepare development environment
+```sh
+# Install virtualenv
+pip install virtualenv
+
+# Create virtual environment
+virtualenv .venv
+
+# Activate the environment (Follow the steps according your SO)
+
+# Windows
+.venv\Scripts\activate.bat
+
+# Linux / Mac OS
+.venv/bin/activate
+
+# Install package manager for development
+pip install pipm
+```
+
 ## Install dependencies
 ```sh
-yarn install
+pipm install --all
 ```
 
 ## Run all tests
 ```sh
-yarn test
-```
-
-## Run unit tests
-```sh
-yarn test:unit
-```
-
-## Run integration tests (Needs an instance of mongo db running)
-```sh
-yarn test:integration
+pytest
 ```
 
 ## Build application
 ```sh
-yarn build
+docker-compose up --build
 ```
 
 ## Start application
 ```sh
-yarn start
+# Development
+python src\server.py
+
+# Production
+docker-compose up
 ```
