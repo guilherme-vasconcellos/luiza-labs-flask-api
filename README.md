@@ -7,12 +7,9 @@ Employees manager is an api to manage employees data.
 Dependencies used on development:
 
 - Python v3.7.4
-- Docker v18.09.2
 - MySQL v5.7
 
 The application is written in python3 with flask micro framework and mysql as database.
-
-Docker is used to run the application in "production mode" and guarantee their functionality in different environments.
 
 # How to use
 
@@ -38,9 +35,14 @@ virtualenv .venv
 pip install pipm
 ```
 
+## Start database
+```sh
+docker run --name mysql -p 3306:3306 -e MYSQL_DATABASE=Employee -e MYSQL_ROOT_PASSWORD=root mysql:5.7
+```
+
 ## Install dependencies
 ```sh
-pipm install --all
+pipm install
 ```
 
 ## Run integration tests (Needs an instance of mysql running with schema named Employee)
@@ -48,16 +50,7 @@ pipm install --all
 pytest
 ```
 
-## Build application
-```sh
-docker-compose build
-```
-
 ## Start application
 ```sh
-# Development
 python src\server.py
-
-# Production
-docker-compose up
 ```
