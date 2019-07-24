@@ -48,7 +48,7 @@ pytest
 
 ## Build application
 ```sh
-docker-compose up --build
+docker-compose build
 ```
 
 ## Start application
