@@ -17,6 +17,8 @@ Docker is used to run the application in "production mode" and guarantee their f
 # How to use
 
 ## Prepare development environment
+*Note: Assuming you have a mysql db with schema named Employee*
+
 ```sh
 # Install virtualenv
 pip install virtualenv

@@ -1,3 +1,5 @@
+import json
+
 from flask import current_app as app, Blueprint, request, jsonify
 
 from app.repositories.employee_repository import EmployeeRepository
@@ -7,7 +9,9 @@ employee_bp = Blueprint('employee', __name__)
 
 @employee_bp.route('/', methods=['POST'])
 def create():
-    payload = request.json
+    payload = request.get_data()
+    payload = json.loads(payload)
+
     try:
         created = EmployeeRepository.create(payload)
 
@@ -39,7 +43,9 @@ def find_by_email(email):
 
 @employee_bp.route('/<string:email>', methods=['PUT'])
 def update_by_email(email):
-    payload = request.json
+    payload = request.get_data()
+    payload = json.loads(payload)
+
     try:
         employee = EmployeeRepository.update_by_email(email, payload)
         return jsonify(employee), 200
@@ -50,7 +56,9 @@ def update_by_email(email):
 
 @employee_bp.route('/<string:email>', methods=['DELETE'])
 def delete_by_email(email):
-    payload = request.json
+    payload = request.get_data()
+    payload = json.loads(payload)
+
     try:
         employee = EmployeeRepository.delete_by_email(email)
         return jsonify(employee), 204

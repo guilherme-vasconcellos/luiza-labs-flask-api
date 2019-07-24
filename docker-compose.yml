@@ -16,7 +16,6 @@ services:
     environment:
       SERVER_NAME: '0.0.0.0:8000'
       MYSQL_URI: mysql+pymysql://root:root@mysql:3306/Employee
-      FLASK_ENV: production
     depends_on:
       - mysql
     restart: always
