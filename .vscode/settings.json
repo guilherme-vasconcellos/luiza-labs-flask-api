@@ -1,0 +1,10 @@
+{
+    "python.pythonPath": ".venv\\Scripts\\python.exe",
+    "files.exclude": {
+        "**/__init__.py": true,
+        "**/*.pyc": true,
+        "**/__pycache__": true,
+        "**/.pytest_cache": true,
+        "**/.coverage": true
+    }
+}

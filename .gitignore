@@ -1,0 +1,10 @@
+# Ignore python bins
+__pycache__
+*.pyc
+
+# Ignore pytest bins/files
+.pytest_cache
+.coverage
+
+# Ignore virtual environment
+.venv
