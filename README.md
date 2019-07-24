@@ -41,7 +41,7 @@ pip install pipm
 pipm install --all
 ```
 
-## Run all tests
+## Run integration tests (Needs an instance of mysql running)
 ```sh
 pytest
 ```
