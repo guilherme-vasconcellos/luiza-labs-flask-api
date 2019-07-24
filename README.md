@@ -41,7 +41,7 @@ pip install pipm
 pipm install --all
 ```
 
-## Run integration tests (Needs an instance of mysql running)
+## Run integration tests (Needs an instance of mysql running with schema named Employee)
 ```sh
 pytest
 ```
