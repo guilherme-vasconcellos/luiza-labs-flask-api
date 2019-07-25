@@ -56,9 +56,6 @@ def update_by_email(email):
 
 @employee_bp.route('/<string:email>', methods=['DELETE'])
 def delete_by_email(email):
-    payload = request.get_data()
-    payload = json.loads(payload)
-
     try:
         employee = EmployeeRepository.delete_by_email(email)
         return jsonify(employee), 204

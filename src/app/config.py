@@ -4,7 +4,7 @@ import os
 ENV = os.getenv('FLASK_ENV', 'development')
 DEBUG = ENV == 'development'
 
-SERVER_NAME = os.getenv('SERVER_NAME', '127.0.0.1:8000')
+SERVER_NAME = '127.0.0.1:8000'
 
 # Datase config
 SQLALCHEMY_TRACK_MODIFICATIONS = True

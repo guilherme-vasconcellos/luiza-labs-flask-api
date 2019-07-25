@@ -4,7 +4,7 @@ from server import create_app
 
 from sqlalchemy import create_engine
 
-endpoint = 'http://localhost:5000/employee'
+endpoint = 'http://127.0.0.1:8000/employee'
 
 
 @pytest.fixture(scope='session')

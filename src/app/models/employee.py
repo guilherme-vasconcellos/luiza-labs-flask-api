@@ -44,8 +44,11 @@ class Employee(db.Model, ModelMixin):
 
     @classmethod
     def update(cls, email, employee):
-        del employee['createdAt']
-        del employee['updatedAt']
+        if 'createdAt' in employee:
+            del employee['createdAt']
+
+        if 'updatedAt' in employee:
+            del employee['updatedAt']
 
         updated = cls.query.filter_by(email=email).update(employee)
         db.session.commit()
